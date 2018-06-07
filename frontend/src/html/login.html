@@ -1,0 +1,20 @@
+<body ng-controller="loginCtrl">
+<div class="body__inner">
+    <h1>Login</h1>
+    <div>
+        Bitte melde dich an um den Ministrantenplaner zu nutzen.
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 input__container row">
+            <input ng-model="username" placeholder="Benutzername" type="text" class="col-md-12" required>
+        </div>
+        <div class="col-md-12 input__container row">
+            <input ng-model="password" placeholder="Passwort" type="password" class="col-md-12" required>
+        </div>
+        <div class="col-md-12 row button__container">
+            <button ng-click="login(username, password)" class="btn btn-success">Anmelden</button>
+            <a href="/registrieren" class="btn btn-warning">Registrieren</a>
+        </div>
+    </div>
+</div>
+</body>

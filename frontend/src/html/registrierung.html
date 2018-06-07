@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Registrierung Ministrantenplaner</title>
+		<link rel="stylesheet" type="text/css" href="registrierung.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script>
+		angular.module('RegisterCtrl', []).controller('RegisterCtrl', ['$scope'], function($scope){
+		$scope.close_register = function(check=true)
+			{
+				if(check&&confirm(unescape("M%F6chten sie die Registrierung wirklich abbrechen?\nKlicken sie daf%FCr auf \"OK\"")))
+				{
+				
+				}
+				//something.innerHTML="";
+			}
+			
+			$scope.send_register_data = function(data)
+			{
+			console.log("geht ab")
+				//Soll Daten senden k.a. wie das mit forms geht
+				console.log(data);
+				//close_register(false);
+			}
+		})
+		</script>
+	</head>
+	<body ng-controller="RegisterCtrl">
+		<h1>Registrierung</h1>
+		<form>
+			<div>
+				<label>Name</label>
+				<br>
+				<input id="vorname" type="text" class="form-control" title="Vorname - keine Zahlen" placeholder="Vorname" ng-model="test" required>
+				<input id="nachname" type="text" class="form-control" title="Nachname - keine Zahlen" placeholder="Nachname" required>
+			</div>
+			<br>
+			<div>
+				<label>Geburtsdatum</label>
+				<br>
+				<input type="date" class="form-control" id="geburtstag" required>
+			</div>
+			<br>
+			<div>
+				<label>Anschrift</label>
+				<br>
+				<input id="plz" type="text" class="form-control" min="10000" max="99999" step="1"  placeholder="PLZ" required>
+				<input id="ort" type="text" class="form-control" title="Ort - keine Zahlen" placeholder="Ort" required>
+				<br>
+				<input id="strasse" type="text" class="form-control" placeholder="Strasse" required>
+				<input id="hausnr" type="number" class="form-control" placeholder="Hausnr." required>
+			</div>
+			<br>
+			<div>
+				<label>Pfarrei</label>
+				<br>
+				<select id="pfarrei" class="form-control" required>
+					<option value="augsburg">Augsburg</option>
+				</select>
+				<!-- <input id="pfarrei" type="text" placeholder="Pfarrei" required> -->
+			</div>
+			<br>
+			<div>
+				<label>E-Mail</label>
+				<br>
+				<input id="email" type="email" class="form-control" placeholder="E-Mail" required>
+			</div>
+			<br>
+			<div>
+				<label>Tel./Handynr.</label>
+				<br>
+				<input type="tel" id="tel" class="form-control" placeholder="Tel." required>
+				<br>
+				<input type="tel" id="handy" class="form-control" placeholder="Handynr.">
+			</div>
+			<br>			
+				<button type="button" ng-click="close_register(true)" class="btn btn-danger">Abbrechen</button>
+		</form>
+				<button ng-click="send_register_data(test)" class="btn btn-success">
+	</body>
+</html>
